@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.0.4.final using JasperReports Library version 6.0.4  -->
+<!-- 2015-06-24T22:19:13 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Itens2" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d859bd51-371a-4b53-8d13-0a7f691c0a5e">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="idPedido" class="java.lang.Integer"/>
+	<field name="idCliente" class="java.lang.Integer"/>
+	<field name="idRepresentante" class="java.lang.Integer"/>
+	<field name="valorTotal" class="java.lang.Double"/>
+	<field name="prazo" class="java.lang.String"/>
+	<field name="razaoSocial" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="59" splitType="Stretch">
+			<textField>
+				<reportElement x="110" y="6" width="341" height="45" uuid="5b61d082-5da2-40e6-9579-354041140f71"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Relatório de pedidos"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="56" width="561" height="1" uuid="30f13e4e-c256-4f9d-b111-c999166f0a52"/>
+			</line>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="60" height="20" uuid="b18ab0eb-517a-4a71-abe4-30a97e1db2b5"/>
+				<text><![CDATA[Pedido]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="60" y="0" width="60" height="20" uuid="1ea09d24-73e6-4d57-a582-43a32ada0df6"/>
+				<text><![CDATA[Cliente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="120" y="0" width="100" height="20" uuid="bbd87c76-3418-4b3d-aa78-1bc17b4ce092"/>
+				<text><![CDATA[RazaoSocial]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="330" y="0" width="80" height="20" uuid="b5be2e08-60da-4c44-a01d-078a6c2a1a5e"/>
+				<text><![CDATA[Representante]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="491" y="0" width="70" height="20" uuid="8ce18b2b-166b-4074-9c62-81d3e35d145d"/>
+				<text><![CDATA[Prazo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="410" y="0" width="80" height="20" uuid="68022c83-d945-4eb1-8643-ad6108db3fc4"/>
+				<text><![CDATA[Valor total]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="23" width="554" height="1" uuid="3a8457f8-280b-4eeb-b873-78b075f244fd"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="23" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="60" height="20" uuid="094d84aa-467f-4f72-b765-9781c0547c4d"/>
+				<textFieldExpression><![CDATA[$F{idPedido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="60" y="0" width="60" height="20" uuid="f2fb661f-0eb5-4c47-b20f-fe82ec562185"/>
+				<textFieldExpression><![CDATA[$F{idCliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="330" y="0" width="80" height="20" uuid="1a1be4f0-bb49-4bcd-9f60-ad5479395ce9"/>
+				<textFieldExpression><![CDATA[$F{idRepresentante}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00#;(#,##0.00#-)">
+				<reportElement x="410" y="0" width="80" height="20" uuid="92106fee-fcac-4049-8e85-7c4631c3d010"/>
+				<textFieldExpression><![CDATA[$F{valorTotal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="491" y="0" width="69" height="20" uuid="c881923f-a5ff-4c78-b9b6-bd2d3d57c9b0"/>
+				<textFieldExpression><![CDATA[$F{prazo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="0" width="210" height="20" uuid="08b6b67c-5681-405d-a82c-a82c69d07427"/>
+				<textFieldExpression><![CDATA[$F{razaoSocial}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="36" splitType="Stretch">
+			<textField>
+				<reportElement x="354" y="6" width="100" height="30" uuid="ff12bddb-ced1-452c-9f46-c4bcc8d71b95"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Página " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="454" y="6" width="100" height="30" uuid="9bcbe457-5caf-4d19-b6ae-74b2a85fe3be"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[" de " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="3" width="554" height="1" uuid="6e1800ae-93cd-4890-9259-b325ef0e0148"/>
+			</line>
+		</band>
+	</pageFooter>
+</jasperReport>
